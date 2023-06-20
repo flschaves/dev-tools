@@ -17,11 +17,20 @@ class GhStats {
 	protected static $_instance = null;
 
 	/**
+	 * Admin instance.
+	 *
+	 * @var Admin
+	 * @since 0.1.0
+	 */
+	public $admin = null;
+
+	/**
 	 * Class constructor.
 	 *
 	 * @since 0.1.0
 	 */
 	public function __construct() {
+		$this->admin = new Admin\Admin();
 	}
 
 	/**
