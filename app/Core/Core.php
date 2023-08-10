@@ -10,10 +10,18 @@ final class Core {
 	/**
 	 * Cache instance.
 	 *
-	 * @var Core
+	 * @var Cache
 	 * @since 0.1.0
 	 */
 	public $cache = null;
+
+	/**
+	 * Updates instance.
+	 *
+	 * @var Updates
+	 * @since 0.1.0
+	 */
+	public $updates = null;
 
 	/**
 	 * Class constructor.
@@ -21,6 +29,7 @@ final class Core {
 	 * @since 0.1.0
 	 */
 	public function __construct() {
-		$this->cache = new Cache();
+		$this->updates = new Updates();
+		$this->cache   = new Cache();
 	}
 }
