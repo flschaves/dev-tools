@@ -12,7 +12,7 @@ class Github {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @return string
+	 * @return string The page title.
 	 */
 	public function get_title() {
 		return esc_html__( 'Github', 'dev-tools' );
@@ -22,6 +22,8 @@ class Github {
 	 * Render the page HTML.
 	 *
 	 * @since 0.1.0
+	 *
+	 * @return void
 	 */
 	public static function render() {
 		echo 'HEY THERE';
@@ -32,7 +34,8 @@ class Github {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @param array $post Posted data.
+	 * @param  array $post Posted data.
+	 * @return void
 	 */
 	public function processPost( $post ) {
 	}

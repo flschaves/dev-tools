@@ -39,6 +39,8 @@ class Pages {
 	 * Assign all hooks to proper places.
 	 *
 	 * @since 0.1.0
+	 *
+	 * @return void
 	 */
 	protected function hooks() {
 		add_action( 'admin_menu', [ $this, 'addMenus' ] );
@@ -49,6 +51,8 @@ class Pages {
 	 * Add admin area menu item.
 	 *
 	 * @since 0.1.0
+	 *
+	 * @return void
 	 */
 	public function addMenus() {
 		add_menu_page(
@@ -82,7 +86,7 @@ class Pages {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @return int
+	 * @return int The menu item position.
 	 */
 	public function getMenuItemPosition() {
 		return apply_filters( 'devtools_admin_area_get_menu_item_position', 95 );
@@ -93,18 +97,18 @@ class Pages {
 	 *
 	 * @since 0.1.0
 	 *
-	 * @return string
+	 * @return string The menu item capability.
 	 */
 	public function getMenuItemCapability() {
 		return apply_filters( 'devtools_admin_area_get_menu_item_capability', 'manage_options' );
 	}
 
 	/**
-	 * Get all admin area pages.
+	 * Set all admin area pages.
 	 *
 	 * @since 0.1.0
 	 *
-	 * @return array
+	 * @return void
 	 */
 	private function setPages() {
 		$this->pages = [
@@ -120,7 +124,7 @@ class Pages {
 	 * @since 0.1.0
 	 *
 	 * @param  string      $slug Page slug.
-	 * @return object|bool
+	 * @return object|bool       Page instance or false if not found.
 	 */
 	public function getPage( $slug = '' ) {
 		if ( empty( $slug ) ) {
@@ -138,6 +142,8 @@ class Pages {
 	 * Handle POST submits.
 	 *
 	 * @since 0.1.0
+	 *
+	 * @return void
 	 */
 	public function processActions() {
 		$page = $this->getPage();
@@ -157,6 +163,8 @@ class Pages {
 	 * Render the admin area page.
 	 *
 	 * @since 0.1.0
+	 *
+	 * @return void
 	 */
 	public function render() {
 		$page = $this->getPage();

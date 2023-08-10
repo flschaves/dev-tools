@@ -33,7 +33,7 @@ abstract class BaseApi {
 	 * @param  string $method   Request method.
 	 * @param  string $endpoint Endpoint.
 	 * @param  array  $data     Data.
-	 * @return array
+	 * @return array            The response.
 	 */
 	public function __call( $method, $args ) {
 		$method   = strtoupper( $method );

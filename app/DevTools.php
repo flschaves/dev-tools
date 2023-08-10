@@ -44,7 +44,7 @@ class DevTools {
 	 *
 	 * @since 0.1.0
 	 */
-	public function __construct() {
+	private function __construct() {
 		$this->pages = new Pages\Pages();
 		$this->api   = new Api\Api();
 		$this->core  = new Core\Core();
@@ -52,12 +52,10 @@ class DevTools {
 
 	/**
 	 * Main DevTools instance.
-	 *
 	 * Ensures only one instance of DevTools is loaded or can be loaded.
 	 *
 	 * @since 0.1.0
-	 * @static
-	 * @see devTools()
+	 *
 	 * @return DevTools - Main instance.
 	 */
 	public static function instance() {
