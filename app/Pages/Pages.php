@@ -112,9 +112,10 @@ class Pages {
 	 */
 	private function setPages() {
 		$this->pages = [
-			$this->slug             => new Dashboard(),
-			$this->slug . '-github' => new Github(),
-			$this->slug . '-daily'  => new Daily()
+			$this->slug               => new Dashboard(),
+			$this->slug . '-github'   => new Github(),
+			$this->slug . '-daily'    => new Daily(),
+			$this->slug . '-settings' => new Settings()
 		];
 	}
 
@@ -154,8 +155,8 @@ class Pages {
 		}
 
 		// Process POST only if it exists.
-		if ( is_callable( [ $page, 'processPost' ] ) && ! empty( $_POST['devtools'] ) ) {
-			$page->processPost( $_POST['devtools'] );
+		if ( is_callable( [ $page, 'processPost' ] ) && ! empty( $_POST['dev-tools'] ) ) {
+			$page->processPost( $_POST['dev-tools'] );
 		}
 	}
 
