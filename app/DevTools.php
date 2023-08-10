@@ -1,17 +1,17 @@
 <?php
-namespace GhStats;
+namespace DevTools;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class GhStats {
+class DevTools {
 
 	/**
 	 * The single instance of the class.
 	 *
-	 * @var GhStats
+	 * @var DevTools
 	 * @since 0.1.0
 	 */
 	protected static $_instance = null;
@@ -34,14 +34,14 @@ class GhStats {
 	}
 
 	/**
-	 * Main GhStats instance.
+	 * Main DevTools instance.
 	 *
-	 * Ensures only one instance of GhStats is loaded or can be loaded.
+	 * Ensures only one instance of DevTools is loaded or can be loaded.
 	 *
 	 * @since 0.1.0
 	 * @static
-	 * @see ghStats()
-	 * @return GhStats - Main instance.
+	 * @see devTools()
+	 * @return DevTools - Main instance.
 	 */
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {

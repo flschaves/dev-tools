@@ -1,5 +1,5 @@
 <?php
-namespace GhStats\Admin\Pages;
+namespace DevTools\Admin\Pages;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ class Auth {
 	 * @return string
 	 */
 	public function get_title() {
-		return esc_html__( 'Authentication', 'gh-stats' );
+		return esc_html__( 'Authentication', 'dev-tools' );
 	}
 
 	/**

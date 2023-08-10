@@ -1,5 +1,5 @@
 <?php 
-namespace GhStats\Admin;
+namespace DevTools\Admin;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ class Admin {
 	 * 
 	 * @var string
 	 */
-	private $slug = 'gh-stats';
+	private $slug = 'dev-tools';
 
 	/**
 	 * List of admin area pages.
@@ -51,8 +51,8 @@ class Admin {
 	 */
 	public function addMenus() {
 		add_menu_page(
-			esc_html__( 'Github Stats', 'gh-stats' ),
-			esc_html__( 'Github Stats', 'gh-stats' ),
+			esc_html__( 'Developer Tools', 'dev-tools' ),
+			esc_html__( 'Developer Tools', 'dev-tools' ),
 			$this->getMenuItemCapability(),
 			$this->slug,
 			[ $this, 'render' ],
@@ -69,7 +69,6 @@ class Admin {
 	 * @return int
 	 */
 	public function getMenuItemPosition() {
-
 		/**
 		 * Filters menu item position.
 		 *
@@ -77,7 +76,7 @@ class Admin {
 		 *
 		 * @param int $position Position number.
 		 */
-		return apply_filters( 'ghstats_admin_area_get_menu_item_position', 95 );
+		return apply_filters( 'devtools_admin_area_get_menu_item_position', 95 );
 	}
 
 	/**
@@ -88,7 +87,6 @@ class Admin {
 	 * @return string
 	 */
 	public function getMenuItemCapability() {
-
 		/**
 		 * Filters menu item capability.
 		 *
@@ -96,7 +94,7 @@ class Admin {
 		 *
 		 * @param string $capability Capability.
 		 */
-		return apply_filters( 'ghstats_admin_area_get_menu_item_capability', 'manage_options' );
+		return apply_filters( 'devtools_admin_area_get_menu_item_capability', 'manage_options' );
 	}
 
 	/**
@@ -126,7 +124,7 @@ class Admin {
 	 */
 	public function getPage( $slug = '' ) {
 		if ( empty( $slug ) ) {
-			$slug = ! empty( $_GET['page'] ) ? \sanitize_key( $_GET['page'] ) : '';
+			$slug = ! empty( $_GET['page'] ) ? sanitize_key( $_GET['page'] ) : '';
 		}
 
 		$pages = $this->getPages();
@@ -152,8 +150,8 @@ class Admin {
 		}
 
 		// Process POST only if it exists.
-		if ( is_callable( [ $page, 'processPost' ] ) && ! empty( $_POST['ghstats'] ) ) {
-			$page->processPost( $_POST['ghstats'] );
+		if ( is_callable( [ $page, 'processPost' ] ) && ! empty( $_POST['devtools'] ) ) {
+			$page->processPost( $_POST['devtools'] );
 		}
 	}
 
@@ -172,7 +170,7 @@ class Admin {
 			<div class="wrap" id="table-area">
 				<h1>
 					<?php
-					esc_html_e( 'Github Stats', 'gh-stats' );
+					esc_html_e( 'Developer Tools', 'dev-tools' );
 					if ( ! empty( $page->get_title() ) ) {
 						echo " - {$page->get_title()}";
 					}
