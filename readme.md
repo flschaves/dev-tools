@@ -1,4 +1,4 @@
-# Plugin releases
+# Dev Tools
 
 A WordPress plugin that helps your daily development experience.
 This was created to my particular use, so some functionality could be really specific to my daily basis.
