@@ -40,14 +40,23 @@ class DevTools {
 	public $core = null;
 
 	/**
+	 * Features instance.
+	 *
+	 * @var Features
+	 * @since 0.1.0
+	 */
+	public $features = null;
+
+	/**
 	 * Class constructor.
 	 *
 	 * @since 0.1.0
 	 */
 	private function __construct() {
-		$this->pages = new Pages\Pages();
-		$this->api   = new Api\Api();
-		$this->core  = new Core\Core();
+		$this->pages    = new Pages\Pages();
+		$this->api      = new Api\Api();
+		$this->core     = new Core\Core();
+		$this->features = new Features\Features();
 	}
 
 	/**

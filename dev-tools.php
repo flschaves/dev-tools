@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 
-if ( ! defined( 'DEV_TOOLS_VER' ) ) {
-	define( 'DEV_TOOLS_VER', '0.1.0' );
+if ( ! defined( 'DEV_TOOLS_VERSION' ) ) {
+	define( 'DEV_TOOLS_VERSION', '0.1.0' );
 }
 if ( ! defined( 'DEV_TOOLS_DIR' ) ) {
 	define( 'DEV_TOOLS_DIR', __DIR__ );
