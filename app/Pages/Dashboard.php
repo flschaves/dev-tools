@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Auth {
+class Dashboard {
 	/**
 	 * Get the page title.
 	 *
@@ -15,7 +15,7 @@ class Auth {
 	 * @return string
 	 */
 	public function get_title() {
-		return esc_html__( 'Authentication', 'dev-tools' );
+		return esc_html__( 'Dashboard', 'dev-tools' );
 	}
 
 	/**

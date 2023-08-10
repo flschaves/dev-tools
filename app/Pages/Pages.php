@@ -32,6 +32,7 @@ class Pages {
 	 */
 	public function __construct() {
 		$this->hooks();
+		$this->setPages();
 	}
 
 	/**
@@ -59,6 +60,21 @@ class Pages {
 			'dashicons-editor-table',
 			$this->getMenuItemPosition()
 		);
+
+		foreach ( $this->pages as $slug => $page ) {
+			if ( $slug === $this->slug ) {
+				continue;
+			}
+
+			add_submenu_page(
+				$this->slug,
+				$page->get_title(),
+				$page->get_title(),
+				$this->getMenuItemCapability(),
+				$slug,
+				[ $this, 'render' ]
+			);
+		}
 	}
 
 	/**
@@ -90,14 +106,12 @@ class Pages {
 	 *
 	 * @return array
 	 */
-	public function getPages() {
-		if ( empty( $this->pages ) ) {
-			$this->pages = [
-				$this->slug => new Auth(),
-			];
-		}
-
-		return $this->pages;
+	private function setPages() {
+		$this->pages = [
+			$this->slug             => new Dashboard(),
+			$this->slug . '-github' => new Github(),
+			$this->slug . '-daily'  => new Daily()
+		];
 	}
 
 	/**
@@ -113,10 +127,8 @@ class Pages {
 			$slug = ! empty( $_GET['page'] ) ? sanitize_key( $_GET['page'] ) : '';
 		}
 
-		$pages = $this->getPages();
-
-		if ( isset( $pages[ $slug ] ) ) {
-			return $pages[ $slug ];
+		if ( isset( $this->pages[ $slug ] ) ) {
+			return $this->pages[ $slug ];
 		}
 
 		return false;
