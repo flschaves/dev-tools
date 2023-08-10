@@ -7,7 +7,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class DevTools {
-
 	/**
 	 * The single instance of the class.
 	 *
@@ -17,12 +16,28 @@ class DevTools {
 	protected static $_instance = null;
 
 	/**
-	 * Admin instance.
+	 * Pages instance.
 	 *
-	 * @var Admin
+	 * @var Pages
 	 * @since 0.1.0
 	 */
-	public $admin = null;
+	public $pages = null;
+
+	/**
+	 * API instance.
+	 *
+	 * @var Api
+	 * @since 0.1.0
+	 */
+	public $api = null;
+
+	/**
+	 * Core instance.
+	 *
+	 * @var Core
+	 * @since 0.1.0
+	 */
+	public $core = null;
 
 	/**
 	 * Class constructor.
@@ -30,7 +45,9 @@ class DevTools {
 	 * @since 0.1.0
 	 */
 	public function __construct() {
-		$this->admin = new Admin\Admin();
+		$this->pages = new Pages\Pages();
+		$this->api   = new Api\Api();
+		$this->core  = new Core\Core();
 	}
 
 	/**

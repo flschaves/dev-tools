@@ -1,5 +1,5 @@
 <?php
-namespace DevTools\Admin\Pages;
+namespace DevTools\Pages;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

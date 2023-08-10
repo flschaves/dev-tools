@@ -1,5 +1,5 @@
 <?php 
-namespace PluginReleases\Api;
+namespace DevTools\Api;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {

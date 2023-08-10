@@ -1,12 +1,12 @@
 <?php 
-namespace DevTools\Admin;
+namespace DevTools\Pages;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Admin {
+class Pages {
 	/**
 	 * Admin Area slug.
 	 *
@@ -69,13 +69,6 @@ class Admin {
 	 * @return int
 	 */
 	public function getMenuItemPosition() {
-		/**
-		 * Filters menu item position.
-		 *
-		 * @since 0.1.0
-		 *
-		 * @param int $position Position number.
-		 */
 		return apply_filters( 'devtools_admin_area_get_menu_item_position', 95 );
 	}
 
@@ -87,13 +80,6 @@ class Admin {
 	 * @return string
 	 */
 	public function getMenuItemCapability() {
-		/**
-		 * Filters menu item capability.
-		 *
-		 * @since 0.1.0
-		 *
-		 * @param string $capability Capability.
-		 */
 		return apply_filters( 'devtools_admin_area_get_menu_item_capability', 'manage_options' );
 	}
 
@@ -107,7 +93,7 @@ class Admin {
 	public function getPages() {
 		if ( empty( $this->pages ) ) {
 			$this->pages = [
-				$this->slug => new Pages\Auth(),
+				$this->slug => new Auth(),
 			];
 		}
 
